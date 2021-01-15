@@ -205,6 +205,8 @@ Error message and password prompt
 
 <li>Power Query</li>
 
+<li>SayHiMacro</li>
+
 <li>TableOfContents</li>
 
 <li>Tasks</li>
@@ -10133,7 +10135,7 @@ Error message and password prompt
 <div created="20210115231308296" modified="20210115232021799" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
-<div created="20210115224310724" modified="20210115224310724" title="$:/state/showeditpreview">
+<div created="20210115224310724" modified="20210115232536916" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20210115232140208" modified="20210115232144725" title="$:/state/sidebar">
@@ -10160,7 +10162,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210115225711639" list="" modified="20210115232130823" title="$:/StoryList">
+<div created="20210115225711639" list="SayHiMacro" modified="20210115232130823" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10287,6 +10289,12 @@ Error message and password prompt
 </div>
 <div created="20210115224440522" modified="20210115224447609" tags="[[Home Page]]" title="Power Query">
 <pre></pre>
+</div>
+<div created="20210115232456862" modified="20210115232544845" tags="" title="SayHiMacro">
+<pre>\define sayHi(name:&quot;default value&quot;)
+Hello there $name$
+\end
+</pre>
 </div>
 <div caption="Contents" color="#c31d1d" created="20210115223054167" list="[[Home Page]] Tasks About" list-after="$:/core/ui/SideBar/Open" modified="20210115230151579" tags="$:/tags/SideBar" title="TableOfContents">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
