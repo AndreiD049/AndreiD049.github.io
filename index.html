@@ -213,8 +213,6 @@ Error message and password prompt
 
 <li>Home Page</li>
 
-<li>New Tiddler</li>
-
 <li>Power Query</li>
 
 <li>TableOfContents</li>
@@ -10251,7 +10249,7 @@ Error message and password prompt
 <div created="20210115235436924" creator="A" modified="20210115235438035" modifier="Andre" title="$:/status/UserName">
 <pre>Andrei</pre>
 </div>
-<div created="20210116081732639" creator="Andrei" list="[[New Tiddler]] [[Home Page]]" modified="20210116083635388" modifier="Andrei" title="$:/StoryList">
+<div created="20210116081732639" creator="Andrei" list="[[Home Page]]" modified="20210116083635388" modifier="Andrei" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10378,126 +10376,6 @@ Error message and password prompt
 <div created="20210115222805013" modified="20210115224426966" tags="TableOfContents" title="Home Page">
 <pre>! Topics:
 [[Power Query]]</pre>
-</div>
-<div created="20210116081740159" creator="Andrei" modified="20210116083629873" modifier="Andrei" tags="" title="New Tiddler" type="text/vnd.tiddlywiki">
-<pre>```cpp
-/*
- * 39. Combination Sum
- *
- * All elements of candidates are distinct.
- * The same number may be chosen from candidates an unlimited number of times.
- * Two combinations are unique if the frequency of at least one of the chosen numbers is different.
- */
-
-vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt;&amp; candidates, int target) {
-    vector&lt;vector&lt;int&gt; &gt; res;
-    vector&lt;int&gt; out;
-    combinationSumHelper(candidates, target, 0, out, res);
-    return res;
-}
-void combinationSumHelper(vector&lt;int&gt;&amp; candidates, int target, int start, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt; &gt;&amp; res) {
-    if (target &lt; 0)
-        return;
-    else if (target == 0) {
-        res.push_back(out);
-        return;
-    } else {
-        for (int i = start; i &lt; candidates.size(); ++i) {
-            out.push_back(candidates[i]);
-            combinationSumHelper(candidates, target - candidates[i], i, out, res);
-            out.pop_back();
-        }            
-    }
-}
-
-/*
- * 40. Combination Sum II
- *
- * Each number in candidates may only be used once in the combination.
- * There are duplicates in candidates.
- */
-vector&lt;vector&lt;int&gt;&gt; combinationSum2(vector&lt;int&gt;&amp; candidates, int target) {
-    vector&lt;vector&lt;int&gt; &gt; res;
-    vector&lt;int&gt; out;
-    sort(candidates.begin(), candidates.end());
-    combinationSum2Helper(candidates, target, 0, out, res);
-    return res;
-}
-void combinationSum2Helper(vector&lt;int&gt;&amp; candidates, int target, int start, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt; &gt;&amp; res) {
-    if (target &lt; 0)
-        return;
-    else if (target == 0) {
-        res.push_back(out);
-        return;
-    } else {
-        for (int i = start; i &lt; candidates.size(); ++i) {
-            if (i &gt; start &amp;&amp; candidates[i] == candidates[i - 1])
-                continue;
-            out.push_back(candidates[i]);
-            combinationSum2Helper(candidates, target - candidates[i], i + 1, out, res);
-            out.pop_back();
-        }            
-    }
-}
-
-/*
- * 216. Combination Sum III
- *
- * Find all valid combinations of k numbers that sum up to n such that the following conditions are true:
- *     Only numbers 1 through 9 are used.
- *     Each number is used at most once.
- */
-vector&lt;vector&lt;int&gt;&gt; combinationSum3(int k, int n) {
-    vector&lt;vector&lt;int&gt; &gt; res;
-    vector&lt;int&gt; out;
-    combinationSum3Helper(k, n, 1, out, res);
-    return res;
-}
-void combinationSum3Helper(int k, int n, int level, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt; &gt;&amp; res) {
-    if (n == 0 &amp;&amp; k == 0) {
-        res.push_back(out);
-        return;
-    } else if (k == 0) {
-        return;
-    } else {
-        for (int i = level; i &lt; 10; ++i) {
-            out.push_back(i);
-            combinationSum3Helper(k - 1, n - i, i + 1, out, res);
-            out.pop_back();
-        }
-    }
-}
-
-/*
- * 377. Combination Sum IV
- *
- * Given an integer array with all positive numbers and no duplicates, 
- * find the number of possible combinations that add up to a positive integer target.
- *
- * Follow up: What if negative numbers are allowed in the given array?
- *     need to limit the length of combination, otherwise could fall into infinite recursive calls. e.g. (+1, -1)
- */
-int combinationSum4(vector&lt;int&gt;&amp; nums, int target) {
-    vector&lt;vector&lt;int&gt; &gt; res;
-    vector&lt;int&gt; out;
-    combinationSum4Helper(nums, target, out, res);
-    return res.size();
-}
-void combinationSum4Helper(vector&lt;int&gt;&amp; nums, int target, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt; &gt;&amp; res) {
-    if (target == 0) {
-        res.push_back(out);
-        return;
-    } else {
-        for (int i = 0; i &lt; nums.size(); ++i) {
-            if (target - nums[i] &lt; 0)
-                continue;
-            out.push_back(i);
-            combinationSum4Helper(nums, target - nums[i], out, res);
-            out.pop_back();
-        } 
-    }
-}
-```</pre>
 </div>
 <div created="20210115224440522" modified="20210115224447609" tags="[[Home Page]]" title="Power Query">
 <pre></pre>
