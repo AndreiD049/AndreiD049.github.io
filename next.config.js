@@ -2,7 +2,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   reactStrictMode: true,
-  assetPrefix: isProd ? '/AndreiD049.github.io.git/' : '',
+  assetPrefix: isProd ? '/AndreiD049.github.io/' : '',
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
