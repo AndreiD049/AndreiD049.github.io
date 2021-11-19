@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styles from './HeaderNav.module.scss';
 
@@ -34,8 +33,8 @@ export default function HeaderNav() {
         Hi, i&apos;m %username%
       </h1>
       <nav className="flex flex-center mb-2 mt-1">
-        <Link href="#about">
           <a
+            href="#about"
             className={classNames("link", "link-no-decoration", {
               "link-selected": isSelected("about"),
             })}
@@ -43,10 +42,9 @@ export default function HeaderNav() {
           >
             About me
           </a>
-        </Link>
         <div className="delimiter px-2"></div>
-        <Link href="#education">
           <a
+            href="#education"
             className={classNames("link", "link-no-decoration", {
               "link-selected": isSelected("education"),
             })}
@@ -54,10 +52,9 @@ export default function HeaderNav() {
           >
             Education
           </a>
-        </Link>
         <div className="delimiter px-2"></div>
-        <Link href="#work">
           <a
+            href="#work"
             className={classNames("link", "link-no-decoration", {
               "link-selected": isSelected("work"),
             })}
@@ -65,10 +62,9 @@ export default function HeaderNav() {
           >
             Work
           </a>
-        </Link>
         <div className="delimiter px-2"></div>
-        <Link href="#projects">
           <a
+            href="#projects"
             className={classNames("link", "link-no-decoration", {
               "link-selected": isSelected("projects"),
             })}
@@ -76,10 +72,9 @@ export default function HeaderNav() {
           >
             Projects
           </a>
-        </Link>
         <div className="delimiter px-2"></div>
-        <Link href="#contact">
           <a
+            href="#contact"
             className={classNames("link", "link-no-decoration", {
               "link-selected": isSelected("contact"),
             })}
@@ -87,7 +82,6 @@ export default function HeaderNav() {
           >
             Contact
           </a>
-        </Link>
       </nav>
     </header>
   );
