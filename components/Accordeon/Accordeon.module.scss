@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+
+.root {
+	overflow: hidden;
+	border: 1px solid scale-color($color: $bg-color-secondary, $lightness: -10%);
+	background-color: $bg-color-secondary;
+	padding: $size-2 $size-1;
+	color: $text-primary-700;
+
+	.header {
+		cursor: pointer;
+		user-select: none;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: flex-end;
+	}
+
+	.content {
+		overflow: hidden;
+		transition: all .3s ease-in-out;
+		position: relative;
+		margin-top: $size-1;
+	}
+
+	.img {
+		height: 1em;
+		margin-right: $size-1;
+	}
+}

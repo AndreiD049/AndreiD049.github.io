@@ -1,0 +1,111 @@
+@import './variables';
+@import './padding';
+@import './margin';
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Handle 4k screens */
+
+@media (min-width: ($br-xl - 100)) {
+  p, div, em {
+    font-size: xx-large;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-default;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 3000px; // TODO: Remove this, it's a test
+}
+
+nav {
+  @media (max-width: $br-sm) {
+    font-size: 0.9em;
+  }
+  @media (max-width: $br-xs) {
+    font-size: 0.8em;
+  }
+}
+
+.container {
+  display: block;
+  width: 70vw;
+  margin: 0 auto;
+
+  @media (max-width: $br-sm) {
+    width: 90vw;
+  }
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &-row {
+    flex-direction: row;
+  }
+  &-nowrap {
+    flex-wrap: nowrap;
+  }
+  &-wrap {
+    flex-wrap: wrap;
+  }
+  &-center {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.delimiter {
+  &::after {
+    content: "|";
+  }
+}
+
+.link {
+  border-bottom: 1px solid transparent;
+  color: $text-primary-500;
+  position: relative;
+  &-no-decoration {
+    text-decoration: none;
+  }
+  &-no-decoration:hover, &-selected {
+    color: $text-primary-700;
+    border-bottom: 1px solid $text-primary-700;
+    transition: border-bottom .4s ease-in-out, color .4s ease-in-out;
+  }
+  &-header {
+    text-decoration: none;
+    &:hover {
+      color: $text-primary-700;
+      transition: color .4s ease-in-out;
+      &::after {
+        margin-left: $size-1;
+        font-size: 0.8em;
+        content: "🔗";
+      }
+    }
+  }
+  &-ghost {
+    visibility: collapse;
+    position: absolute;
+    top: -2.5em;
+  }
+}

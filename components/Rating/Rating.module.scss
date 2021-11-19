@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+
+.item {
+	width: 1.3em;
+	cursor: pointer;
+	margin-left: $size-1;
+
+	&:hover {
+		transform: scale(1.2);
+		transition: .2s transform;
+	}
+}
+
+.container {
+	display: inline-flex;
+	flex-flow: column nowrap;
+}
+
+.rating_row {
+ display: flex;
+ flex-flow: row nowrap;
+ align-items: center;
+}
+
+.text {
+	color: $text-primary-600;
+	font-size: $text-sm;
+
+	&_additional {
+		color: $text-primary-300;
+		font-size: $text-xs;
+		font-style: italic;
+	}
+
+	&_score {
+		color: $text-primary-300;
+		font-size: $text-xs;
+		margin-left: 4px;
+	}
+}

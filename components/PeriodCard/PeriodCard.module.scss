@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+$category-color: scale-color($color: $bg-color-secondary, $lightness: -5%);
+$border-color: scale-color($color: $category-color, $lightness: -2%);
+$text-color: scale-color($category-color, $lightness: 50%);
+
+.card {
+	background-color: $bg-color-secondary;
+	border: 1px solid $border-color;
+	display: flex;
+	flex-flow: column nowrap;
+	color: $text-primary-700;
+}
+
+.category {
+	background-color: $category-color;
+	color: $text-color;
+	font-size: 2em;
+	padding: 0 $size-1;
+	text-transform: uppercase;
+	font-weight: bolder;
+	letter-spacing: .5em;
+}
+
+.body {
+	padding: $size-1;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.years {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: space-evenly;
+	min-height: 75px;
+	max-width: 100px;
+	padding-right: $size-2;
+}
+
+.difference {
+	font-size: $text-xs;
+	color: $text-primary-500;
+	text-align: center;
+}
+
+.content {
+	border-left: 1px solid $border-color;
+	padding-left: $size-2;
+	padding-top: $size-2;
+}
+
+:export {
+	borderColor: $border-color,
+}
