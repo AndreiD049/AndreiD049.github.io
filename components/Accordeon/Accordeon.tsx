@@ -1,5 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { CSSProperties, FC, HTMLAttributes, useEffect, useMemo, useRef, useState } from "react";
+import {
+  CSSProperties,
+  FC,
+  HTMLAttributes,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import styles from "./Accordeon.module.scss";
 
 type AllOrNone<T> = T | { [K in keyof T]?: never };
@@ -17,13 +25,24 @@ export type AccordeonProps = {
   setCollapsed: (val: boolean) => void;
 }>;
 
-const Accordeon: FC<AccordeonProps & HTMLAttributes<HTMLDivElement>> = (props) => {
+const Accordeon: FC<AccordeonProps & HTMLAttributes<HTMLDivElement>> = (
+  props
+) => {
   const content = useRef<HTMLDivElement>(null);
   const controled = props.collapsed !== undefined;
   const [collapsed, setCollapsed] = useState(
     controled ? props.collapsed : Boolean(props.initialCollapsed)
   );
   const [maxHeight, setMaxHeight] = useState("100%");
+  const handleSetHeight = () => {
+    if (content.current) {
+      const clone = content.current.cloneNode(true) as HTMLElement;
+      clone.style.maxHeight = "100%";
+      content.current.parentElement?.appendChild(clone);
+      setMaxHeight(`${clone.clientHeight}px`);
+      content.current.parentElement?.removeChild(clone);
+    }
+  };
 
   const handleClick = () => {
     if (controled) {
@@ -42,24 +61,33 @@ const Accordeon: FC<AccordeonProps & HTMLAttributes<HTMLDivElement>> = (props) =
   };
 
   useEffect(() => {
-    if (content.current) {
-      const clone = content.current.cloneNode(true) as HTMLElement;
-      clone.style.maxHeight = "100%";
-      content.current.parentElement?.appendChild(clone);
-      setMaxHeight(`${clone.clientHeight}px`);
-      content.current.parentElement?.removeChild(clone);
-    }
+    handleSetHeight();
   }, [content, props.children]);
 
+  // Set height again when all content is loaded
+  useEffect(() => {
+    window.addEventListener("load", handleSetHeight);
+    return () => {
+      window.removeEventListener("load", handleSetHeight);
+    };
+  }, []);
+
   return (
-    <div className={`${styles.root} ${props.className}`} style={props.styles?.root}>
+    <div
+      className={`${styles.root} ${props.className}`}
+      style={props.styles?.root}
+    >
       <div
         className={styles.header}
         onClick={handleClick}
         role="button"
         style={props.styles?.header}
       >
-				<img src={`${collapsed ? "/right.png" : "/down.png"}`} alt="collapse icon" className={styles.img} />
+        <img
+          src={`${collapsed ? "/right.png" : "/down.png"}`}
+          alt="collapse icon"
+          className={styles.img}
+        />
         {props.headerText}
       </div>
       <div
