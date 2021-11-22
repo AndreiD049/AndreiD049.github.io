@@ -2,9 +2,11 @@
 import Head from "next/head";
 import About from "../components/About";
 import Accordeon from "../components/Accordeon";
+import Education from "../components/Education";
 import Header from "../components/Header";
 import HeaderNav from "../components/HeaderNav";
 import PeriodCard from "../components/PeriodCard";
+import Work from "../components/Work";
 
 export default function Home() {
   return (
@@ -23,69 +25,11 @@ export default function Home() {
         </section>
         <section>
           <Header id="education">Education</Header>
-          <PeriodCard
-            dateFrom={new Date("2001-09-01")}
-            dateTo={new Date("2013-06-01")}
-            dateFormat="mm-yyyy"
-            category="School"
-            showDateDifference
-            dateDifferenceFormat="yyyy"
-          >
-            <div>
-              <span>Liceul Constantin Stere</span>
-              <br />
-              <small>Soroca. Moldova.</small>
-            </div>
-          </PeriodCard>
-          <PeriodCard
-            dateFrom={new Date("2013-09-01")}
-            dateTo={new Date("2016-06-01")}
-            dateFormat="mm-yyyy"
-            category="Bachelor"
-            className="mt-2"
-            showDateDifference
-            dateDifferenceFormat="yyyy"
-          >
-            <div>
-              <span>Moldova State University</span>
-              <br />
-              <span>Marketing and Logstics</span>
-              <br />
-              <small>Chisinau. Moldova.</small>
-            </div>
-          </PeriodCard>
-
-          <PeriodCard
-            dateFrom={new Date("2016-09-01")}
-            dateTo={new Date("2018-06-01")}
-            dateFormat="mm-yyyy"
-            category="Master"
-            className="mt-2"
-            showDateDifference
-            dateDifferenceFormat="yyyy"
-          >
-            <div>
-              <span>Moldova State University</span>
-              <br />
-              <span>Marketing</span>
-              <br />
-              <small>Chisinau. Moldova.</small>
-            </div>
-          </PeriodCard>
+          <Education />
         </section>
         <section>
           <Header id="work">Work experience</Header>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta earum
-          repudiandae perspiciatis inventore quisquam optio in vitae, labore
-          molestias eligendi quia voluptatem sequi provident commodi deleniti
-          doloribus eius tenetur. Accusamus autem, eveniet dolore excepturi quod
-          temporibus nobis repellendus rem tenetur officiis praesentium totam
-          aliquam sunt itaque quidem nulla voluptate inventore animi dolor
-          aliquid natus hic nesciunt soluta illo. Vitae, tenetur quasi. Aut
-          possimus dolores porro soluta, accusantium et error quos odio
-          repudiandae saepe amet est voluptatem dolorem veniam iste, laudantium
-          labore dicta reiciendis eos esse similique. Nobis commodi minus omnis
-          veritatis dolor, reiciendis nemo porro cumque aliquid quidem eum et.
+          <Work />
         </section>
         <section>
           <Header id="projects">Projects</Header>

@@ -10,7 +10,7 @@ interface Spoiler {
 interface PeriodCardProps {
   category?: string;
   dateFrom: Date;
-  dateTo: Date;
+  dateTo?: Date;
   dateFormat?: "yyyy" | "mm-yyyy";
   showDateDifference?: boolean;
   dateDifferenceFormat?: "yyyy" | "mm" | "mm-yyyy";
@@ -18,7 +18,10 @@ interface PeriodCardProps {
 }
 
 const PeriodCard: FC<PeriodCardProps & HTMLAttributes<HTMLDivElement>> = (props) => {
-  const formatDate = (dt: Date) => {
+  const formatDate = (dt: Date | undefined) => {
+		if (typeof dt === "undefined") {
+			return "Present";
+		}
     const format = props.dateFormat ?? "yyyy";
     switch (format) {
       case "yyyy":
@@ -88,7 +91,7 @@ const PeriodCard: FC<PeriodCardProps & HTMLAttributes<HTMLDivElement>> = (props)
 						props.showDateDifference ?
 							(
 								<span className={styles.difference}>
-									{getDateDifference(props.dateFrom, props.dateTo)}
+									{getDateDifference(props.dateFrom, props.dateTo ?? new Date())}
 								</span>
 							) :
 							null

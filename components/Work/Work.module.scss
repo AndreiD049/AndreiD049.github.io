@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+.text {
+	font-size: 1.1em;
+	color: $text-primary-700;
+
+	&-small {
+		font-size: .8em;
+		color: $text-primary-400;
+	}
+}

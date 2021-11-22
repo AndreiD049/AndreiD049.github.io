@@ -72,6 +72,9 @@ const About: FC = () => {
           <Rating text="Nginx" additionlText="Elementary+" value={2} />
         </li>
         <li>
+          <Rating text="Docker & Docker compose" additionlText="Elementary+" value={2} />
+        </li>
+        <li>
           <Rating text="Flask" additionlText="(Python) Elementary+" value={2} />
         </li>
         <li>
