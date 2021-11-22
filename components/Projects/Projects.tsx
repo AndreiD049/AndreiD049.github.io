@@ -22,7 +22,7 @@ const projects: ProjectProps[] = [
       <div className={styles.description}>
         <p>
           This project is a proof of concept of an internal admin tool used to
-          follow up and manage work in a department.
+          follow up and manage work in a team (or many teams).
         </p>
         <Image
           src="/admintools.png"
@@ -163,12 +163,16 @@ const projects: ProjectProps[] = [
         header: "Authorization",
         content: (
           <>
-            <p>For Authorization, a basic role based strategy was used. It provided control not only over actions user can do, but also over components user can see.</p>
-						<Image
-							src="/admintools-permissions.gif"
-							alt="Authorization"
-							caption="User roles/permissions"
-						/>
+            <p>
+              For Authorization, a basic role based strategy was used. It
+              provided control not only over actions user can do, but also over
+              components user can see.
+            </p>
+            <Image
+              src="/admintools-permissions.gif"
+              alt="Authorization"
+              caption="User roles/permissions"
+            />
           </>
         ),
       },
@@ -324,6 +328,170 @@ const projects: ProjectProps[] = [
           <Image
             src="/xmltest-modification.gif"
             alt="xml document modification"
+          />
+        ),
+      },
+    ],
+  },
+  {
+    header: {
+      text: "Interview helper",
+      id: "interview-helper"
+    },
+    links: [
+      {
+        href: "https://github.com/AndreiD049/Interview-Helper",
+        text: "Github",
+        img: "/github.svg",
+      }
+    ],
+    description: (
+      <div>
+        <p>
+          Interview helper - proof of concept GUI application written in <strong>Python</strong> using <strong>PySide2</strong> library (python bindings for Qt).
+        </p>
+        <p>The idea was to have a software that would be used at interviews, where besides soft skills, basic computer skills should be measured (like typing speed, attention, logic etc...)</p>
+        <p>The data would then be saved and summarized in some useful and easy to analyze format.</p>
+        <p>The software was not finished, but had some features ready that could be interesting.</p>
+        <Image
+          src="/interview.png"
+          alt="Interview helper main screen"
+          caption="Interview helper main screen"
+        />
+      </div>
+    ),
+    additional: [
+      {
+        header: "What i've learned?",
+        content: (
+          <div>
+            <ul>
+              <li>Improved my Python knowledge</li>
+              <li>PySide library for GUI applications</li>
+            </ul>
+          </div>
+        )
+      },
+      {
+        header: "Demo",
+        content: (
+          <Image
+            src="/interview.gif"
+            alt="Demo of application flow"
+            caption="Demo (speed up)"
+          />
+        )
+      }
+    ]
+  },
+  {
+    header: { text: "Invader (terminal based game)", id: "invader" },
+    links: [
+      {
+        text: "Github",
+        href: "https://github.com/AndreiD049/invader",
+        img: "/github.svg",
+      },
+    ],
+    description: (
+      <div>
+        <p>
+          Space Invader - is a terminal based game written in{" "}
+          <strong>Python</strong> using <strong>curses</strong> library.
+        </p>
+				<p>This game is a copy of the Chrome &apos;T-Rex Dinosaur Game&apos; you see when there is no internet. Just a small pet-project i built when i was bored ¯\_(ツ)_/¯.</p>
+        <Image
+          src="/invader.png"
+          alt="Invader start screen"
+          caption="Space Invader start screen"
+        />
+      </div>
+    ),
+		additional: [
+			{
+        header: "What i've learned?",
+        content: (
+          <div>
+            <ul>
+              <li>Curses library</li>
+              <li>Basic 2d bitmap manipulations</li>
+							<li>Improved my Python knowledge</li>
+            </ul>
+          </div>
+        ),
+			},
+			{
+				header: "Gameplay",
+				content: (
+					<Image
+						src="/invader.gif"
+						alt="Actual gameplay"
+						caption="Actual gameplay"
+					/>
+				)
+			}
+		]
+  },
+  {
+    header: { text: "Chess (static canvas game)", id: "chess" },
+    links: [
+      {
+        href: "https://andreid049.github.io/ChessJS/",
+        text: "Github page",
+      },
+      {
+        href: "https://github.com/AndreiD049/ChessJS",
+        text: "Github",
+        img: "/github.svg",
+      },
+    ],
+    description: (
+      <div>
+        <p>
+          One of my very early projects. There is no AI or any chess engine
+          behind it. Was still useful as i learned something about working with
+          html canvas and sprites.
+        </p>
+        <p>
+          Later i used this knowledge to learn more about{" "}
+          <a
+            href="https://pixijs.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            pixijs
+          </a>{" "}
+          library.
+        </p>
+        <Image
+          src="/chess.png"
+          alt="chess game"
+          caption="Screen from the 'game'"
+          styles={{ img: { maxWidth: "500px" } }}
+        />
+      </div>
+    ),
+    additional: [
+      {
+        header: "What i've learned?",
+        content: (
+          <div>
+            <ul>
+              <li>Working with html canvas</li>
+              <li>Working with sprites</li>
+              <li>Implementing chess movements & rules in javascript</li>
+            </ul>
+          </div>
+        ),
+      },
+      {
+        header: "More 'gameplay'",
+        content: (
+          <Image
+            src="/chess-gameplay.gif"
+            alt="chess gameplay"
+            caption="Gameplay demo"
+            styles={{ img: { maxWidth: "600px" } }}
           />
         ),
       },
