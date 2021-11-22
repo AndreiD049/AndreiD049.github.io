@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { FC, ReactElement } from "react";
+import React, { FC, HTMLAttributes, ReactElement } from "react";
 import Accordeon from "../Accordeon";
 import Header from "../Header";
 import Tabs from "../Tabs";
@@ -17,13 +17,13 @@ interface AdditionalContent {
 }
 
 export interface ProjectProps {
-  title: { text: string; id?: string };
+  header: { text: string; id?: string };
   description: ReactElement | string;
   links?: Link[];
   additional?: AdditionalContent[];
 }
 
-const Project: FC<ProjectProps> = (props) => {
+const Project: FC<ProjectProps & HTMLAttributes<HTMLDivElement>> = (props) => {
   const getLinks: () => ReactElement[] = () => {
     if (typeof props.links !== "undefined") {
       return props.links.map((link) => {
@@ -33,7 +33,7 @@ const Project: FC<ProjectProps> = (props) => {
               target="_blank"
               rel="noreferrer"
               href={link.href}
-							title={link.href}
+              title={link.href}
               className="link link-no-decoration"
             >
               {link.img ? (
@@ -52,15 +52,13 @@ const Project: FC<ProjectProps> = (props) => {
     return [];
   };
   return (
-    <div>
+    <div className={props.className} style={props.style}>
       <div className={styles.container}>
         <Header
           className={styles.header}
-          id={props.title.id ? props.title.id : props.title.text}
+          id={props.header.id ? props.header.id : props.header.text}
         >
-          {typeof props.title.text !== "undefined"
-            ? props.title.text
-            : props.title}
+          {props.header.text}
         </Header>
         {typeof props.links !== "undefined" ? (
           <div className={styles.links}>
@@ -78,13 +76,13 @@ const Project: FC<ProjectProps> = (props) => {
               <Accordeon
                 key={add.header}
                 headerText={add.header}
-								styles={{
-									root: {
-										padding: '4px',
-									}
-								}}
+                styles={{
+                  root: {
+                    padding: "4px",
+                  },
+                }}
                 initialCollapsed
-								className={styles.accordeon}
+                className={styles.accordeon}
               >
                 {add.content}
               </Accordeon>

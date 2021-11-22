@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+.container {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	position: relative;
+
+	img {
+
+		@media (max-width: $br-m) {
+			width: 100%;
+		}
+		width: 90%;
+	}
+
+	.caption {
+		text-align: center;
+		font-size: small;
+		font-style: italic;
+		color: $text-primary-500;
+		margin-top: $size-1;
+	}
+}
