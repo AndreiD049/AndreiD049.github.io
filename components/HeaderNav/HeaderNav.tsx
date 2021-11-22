@@ -44,7 +44,7 @@ export default function HeaderNav() {
           isHeaderHidden ? styles["greet-hidden"] : styles["greet-shown"],
         ])}
       >
-        Hi, i&apos;m %username%
+        Hi %username%, i&apos;m Andrei
       </h1>
       <nav className="flex flex-center mb-2 mt-1">
         <a

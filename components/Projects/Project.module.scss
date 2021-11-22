@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+$border-color: scale-color($color: $bg-color-secondary, $lightness: -7%);
+
+.header {
+	font-size: .9em;
+	margin: $size-1 0;
+}
+
+.container {
+	background-color: $bg-color-secondary;
+	padding: $size-1;
+	border: 1px solid $border-color;
+}
+
+.links {
+	display: flex;
+	flex-flow: row wrap;
+	color: $text-primary-700;
+
+	& > .link + .link {
+		margin-left: $size-1;
+	}
+
+	&-text {
+		padding-right: $size-1;
+	}
+}
+
+.link {
+	&-image {
+		height: 1em;
+		padding-right: $size-1;
+	}
+}
+
+.description {
+	margin: $size-2 0;
+
+	&-general {
+		margin-bottom: $size-2;
+		p {
+			margin: $size-1 0;
+		}
+	}
+}
+
+.accordeon {
+	& + .accordeon {
+		border-top: none;
+	}
+}

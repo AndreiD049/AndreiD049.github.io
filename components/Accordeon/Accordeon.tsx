@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { CSSProperties, FC, useEffect, useMemo, useRef, useState } from "react";
+import { CSSProperties, FC, HTMLAttributes, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./Accordeon.module.scss";
 
 type AllOrNone<T> = T | { [K in keyof T]?: never };
@@ -17,7 +17,7 @@ export type AccordeonProps = {
   setCollapsed: (val: boolean) => void;
 }>;
 
-const Accordeon: FC<AccordeonProps> = (props) => {
+const Accordeon: FC<AccordeonProps & HTMLAttributes<HTMLDivElement>> = (props) => {
   const content = useRef<HTMLDivElement>(null);
   const controled = props.collapsed !== undefined;
   const [collapsed, setCollapsed] = useState(
@@ -52,7 +52,7 @@ const Accordeon: FC<AccordeonProps> = (props) => {
   }, [content, props.children]);
 
   return (
-    <div className={styles.root} style={props.styles?.root}>
+    <div className={`${styles.root} ${props.className}`} style={props.styles?.root}>
       <div
         className={styles.header}
         onClick={handleClick}
