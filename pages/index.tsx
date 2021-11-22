@@ -6,6 +6,7 @@ import Education from "../components/Education";
 import Header from "../components/Header";
 import HeaderNav from "../components/HeaderNav";
 import PeriodCard from "../components/PeriodCard";
+import Projects from "../components/Projects";
 import Work from "../components/Work";
 
 export default function Home() {
@@ -33,18 +34,7 @@ export default function Home() {
         </section>
         <section>
           <Header id="projects">Projects</Header>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-          exercitationem rem facilis animi consequatur nesciunt est at eligendi,
-          maiores laboriosam saepe optio aliquam iste dignissimos ex molestias,
-          officia, adipisci aperiam hic rerum quos aliquid beatae voluptate!
-          Velit saepe, quibusdam accusamus est eligendi reprehenderit laboriosam
-          corporis aliquam voluptatum corrupti alias in, cupiditate temporibus
-          voluptate? Ducimus sequi nulla ea, tempora officiis voluptates
-          exercitationem veritatis ad inventore architecto ipsa nam, repellendus
-          obcaecati impedit, voluptate quod saepe laboriosam vel placeat
-          pariatur! Dolorem minima nesciunt officiis labore nulla? Sunt amet
-          quia fuga magni, ex labore eos voluptas voluptate molestiae cumque?
-          Itaque numquam deserunt possimus maxime!
+          <Projects />
         </section>
         <section>
           <Header id="contact">Contact me</Header>

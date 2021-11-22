@@ -29,8 +29,8 @@ const Work: FC = () => {
 				]}
       >
         <div className={styles.container}>
-          <span className={styles.text}><a target="_blank" rel="noreferrer" href="https://www.katoennatie.com/">Katoen Natie</a></span>
-          <span className={styles.text}>Customer Service Representative</span>
+          <span className={styles.text}><a target="_blank" rel="noreferrer" href="https://www.katoennatie.com/">@Katoen Natie</a></span>
+          <span className={styles.text}>Position: Customer Service Representative</span>
         </div>
       </PeriodCard>
       <PeriodCard
@@ -38,6 +38,7 @@ const Work: FC = () => {
         dateFormat="mm-yyyy"
         showDateDifference
         dateDifferenceFormat="mm-yyyy"
+				className={styles.nobordertop}
 				spoilers={[
 					{
 						header: "My responsibilities",
@@ -62,7 +63,7 @@ const Work: FC = () => {
 				]}
       >
         <div className={styles.container}>
-          <span className={styles.text}>Business Support Analyst</span>
+          <span className={styles.text}>Position: Business Support Analyst</span>
         </div>
       </PeriodCard>
 		</section>
