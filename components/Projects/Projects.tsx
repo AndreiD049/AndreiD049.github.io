@@ -92,7 +92,7 @@ const projects: ProjectProps[] = [
                 think.
               </li>
               <li>Writing backend tests using jest</li>
-              <li>Github Actions for CI</li>
+              <li>Github Actions for CI/CD</li>
               <li>React & Fluent UI</li>
               <li>Authentication using passportjs</li>
               <li>Nginx setup and fine tuning</li>
@@ -215,7 +215,7 @@ const projects: ProjectProps[] = [
           <div>
             <ul>
               <li>
-                Had my initial experience Static site generation using nextjs
+                Had my initial experience with Static site generation using nextjs
               </li>
               <li>Sass</li>
               <li>Refreshed my knowledge of Typescript</li>
