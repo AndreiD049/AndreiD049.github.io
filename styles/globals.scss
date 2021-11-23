@@ -19,6 +19,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: $font-default;
+  color: $text-primary-700;
 }
 
 * {
@@ -107,4 +108,8 @@ nav {
     position: absolute;
     top: -2.5em;
   }
+}
+
+footer {
+
 }

@@ -34,24 +34,20 @@ export default function Home() {
         </section>
         <section>
           <Header id="projects">Projects</Header>
+          <p>Below is a list of pet-projects I built and saved. For each one, i tried to summarize what the project is about and what I have learned from it. Links to source code and any other related resources are included.</p>
           <Projects />
         </section>
         <section>
           <Header id="contact">Contact me</Header>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt,
-          quasi! Delectus minus voluptates quia vero error dolorem quidem
-          architecto aliquid. Neque impedit iusto facilis corporis possimus?
-          Dolores, soluta qui. Nesciunt, earum quas! Culpa, ipsam omnis dolorum
-          aperiam, dolores consequatur maxime placeat veritatis delectus iure ex
-          inventore possimus tempora suscipit, cum deleniti consequuntur animi!
-          Explicabo, blanditiis nesciunt quas fugiat illum officiis sequi
-          perferendis quia, voluptatum saepe vitae recusandae? Magnam voluptate
-          dolorem quibusdam cum rerum, odio voluptatem tempore eaque eum porro.
-          Ea nam distinctio temporibus, saepe iusto dolorum aperiam dicta odit.
-          Laboriosam ex nam corrupti eum soluta quisquam repudiandae doloribus
-          commodi nihil!
+          <p>You can contact me by <a href="mailto:andrei.dimitrascu.94@gmail.com">email</a> or via <a href="http://t.me/andreid049" target="_blank" rel="noopener noreferrer">telegram</a>.</p>
+          <p>P.S. I don&apos;t check my messages too often so i apologize for delayed replies. ¯\_( ͡° ͜ʖ ͡°)_/¯</p>
         </section>
       </main>
+      <footer className="container text-center">
+        <div className="mt-5 mb-3">
+          &#0169; <a href="https://github.com/AndreiD049" target="_blank" rel="noopener noreferrer">Andrei Dimitrascu</a> &#8212; 2021
+        </div>
+      </footer>
     </div>
   );
 }
